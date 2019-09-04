@@ -1,0 +1,17 @@
+
+<div class="font-color">
+
+    <label>Input Citizen</label>
+    <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event"/>
+    {{citizensName}}
+    <button (click)="loadData()">
+        Submit
+    </button>
+
+
+    <ul>
+        <li *ngFor="let citizen of arrests">{{citizen.reason}}</li>
+    </ul>
+
+
+</div>

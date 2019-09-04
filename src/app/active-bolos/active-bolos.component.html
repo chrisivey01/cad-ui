@@ -1,0 +1,13 @@
+
+<div class="font-color">
+
+    {{deletedPopup}}
+    <ul>
+        <li *ngFor="let bolo of bolos; let i = index" (click)="slotDelete(i, $event)">{{bolo.reason}}</li>
+    </ul>
+
+
+    <button (click)="removeBolos()">
+        Delete
+    </button>
+</div>
