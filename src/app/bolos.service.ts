@@ -12,7 +12,7 @@ export class BolosService {
     constructor(private httpClient: HttpClient) { }
 
     fetchBoloData() {
-        this.httpClient.get("http://localhost:8080/all-bolos")
+        this.httpClient.get("http://18.209.63.46:8080/all-bolos")
             .subscribe(data => {
                 this.boloData = data;
                 this.dataLoaded.next();
@@ -28,7 +28,7 @@ export class BolosService {
             active: 1,
             reason: boloReason,
         }
-        this.httpClient.post("http://localhost:8080/insert-bolo/", bolo)
+        this.httpClient.post("http://18.209.63.46:8080/insert-bolo/", bolo)
             .subscribe(data =>{
                 this.sent = "BOLO activated!"
                 console.log("data sent", data)
@@ -46,7 +46,7 @@ export class BolosService {
 
 
     deleteBoloData(deletedBolos){
-        this.httpClient.post("http://localhost:8080/delete-bolos/", deletedBolos)
+        this.httpClient.post("http://18.209.63.46:8080/delete-bolos/", deletedBolos)
         .subscribe(data => {
             this.sent = "BOLO(s) deleted."
         },

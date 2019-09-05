@@ -12,7 +12,7 @@ export class JailSystemService {
     constructor(private httpClient: HttpClient) { }
 
     sendJailDetails(jailData) {
-        this.httpClient.post("http://localhost:8080/jail-data/", jailData)
+        this.httpClient.post("http://18.209.63.46:8080/jail-data/", jailData)
             .subscribe(data => {
                 this.arrestData = data;
                 this.sent = "Jail Information entered."
