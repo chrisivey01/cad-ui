@@ -1,3 +1,4 @@
+import { JailSystemService } from './../../jail-system.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JailInputComponent implements OnInit {
 
-  constructor() { }
+  citizenName;
+  arrestingOfficer;
+  reasonArrest;
+  status;
+
+  constructor(private jailSystemService: JailSystemService) { }
 
   ngOnInit() {
   }
 
+
+  sendJailReport(){
+    const obj = {
+      playerName: this.citizenName,
+      arrestingOfficer: this.arrestingOfficer,
+      reason: this.reasonArrest
+    }
+    this.jailSystemService.sendJailDetails(obj)
+    this.status = this.jailSystemService.updateStatus();
+  }
 }

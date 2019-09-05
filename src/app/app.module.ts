@@ -1,3 +1,4 @@
+import { JailSystemService } from './jail-system.service';
 import { CadSystemService } from './cad-system.service';
 import { BolosService } from './bolos.service';
 
@@ -37,6 +38,7 @@ import { JailInputComponent } from './jail/jail-input/jail-input.component';
   ],
   providers: [CadSystemService,
     BolosService,
+    JailSystemService
     ]
     ,
   bootstrap: [AppComponent]

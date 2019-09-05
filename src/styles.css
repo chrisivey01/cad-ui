@@ -2,3 +2,15 @@
 .font-color{
     color:white;
 }
+
+
+*{
+    margin:0;
+}
+
+
+.list-items{
+    height:150px;
+    width:700px;
+    overflow:auto;
+}

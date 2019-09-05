@@ -1,3 +1,17 @@
-<p>jail-input works!</p>
-
-<input/>
+<div>
+    <div>
+        <label>Citizens Name:</label> 
+        <input [ngModel]="citizenName" (ngModelChange)="citizenName = $event"/>
+    </div>
+    <div>
+        <label>Arresting Officer:</label>
+        <input [ngModel]="arrestingOfficer" (ngModelChange)="arrestingOfficer = $event"/>
+    </div>
+    <div>
+        <textarea placeholder="Reason for arrest..."
+        [ngModel]="reasonArrest" (ngModelChange)="reasonArrest = $event"></textarea>
+    </div>
+    <div>
+        <button (click)="sendJailReport()">Submit</button>
+    </div>
+</div>
