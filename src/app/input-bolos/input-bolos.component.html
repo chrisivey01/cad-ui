@@ -1,5 +1,7 @@
 <div>
-    {{status}}
+    <div class="centered-text font-color">
+        <div>{{sent}}</div>
+    </div>
     <input [ngModel]="reason" (ngModelChange)="reason = $event"/>
     <button (click)="sendBoloReport()">Submit</button>
 </div>

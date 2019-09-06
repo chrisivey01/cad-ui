@@ -1,4 +1,7 @@
 <div class="font-color">
+    <div class="centered-text" >
+        {{sent}}
+    </div>
     <div>
         <ul>
             <li *ngFor="let bolo of bolos; let i = index" (click)="slotDelete(i, $event)">{{bolo.reason}}</li>

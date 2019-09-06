@@ -12,6 +12,7 @@ export class ActiveBolosComponent implements OnInit {
   bolos;
   itemsForDelete = [];
   deletedPopup;
+  sent;
   
 
   constructor(private bolosService:BolosService) { }
@@ -59,12 +60,16 @@ export class ActiveBolosComponent implements OnInit {
   removeBolos(){
     this.bolosService.deleteBoloData(this.itemsForDelete)
 
-    this.bolos = this.bolos.filter(bolo => 
-      !this.itemsForDelete.some(deletedBolo => bolo.id === deletedBolo.id))
 
 
-    this.deletedPopup = "BOLOs has been deactivated."
+    this.bolosService.dataLoaded.subscribe(data => {
+      this.bolos = this.bolos.filter(bolo => 
+        !this.itemsForDelete.some(deletedBolo => bolo.id === deletedBolo.id))
+  
+      this.sent = this.bolosService.updateStatus();
 
-    setTimeout(()=> { this.deletedPopup = "" }, 5000);
+    })  
+
+    setTimeout(()=> { this.sent = "" }, 5000);
   }
 }

@@ -32,6 +32,8 @@ export class BolosService {
             .subscribe(data =>{
                 this.sent = "BOLO activated!"
                 console.log("data sent", data)
+                this.dataLoaded.next();
+
             }, 
             error => {
                 this.sent = "Error with BOLO contact government!"
@@ -49,6 +51,7 @@ export class BolosService {
         this.httpClient.post("http://18.209.63.46:8080/delete-bolos/", deletedBolos)
         .subscribe(data => {
             this.sent = "BOLO(s) deleted."
+            this.dataLoaded.next();
         },
         error => {
             this.sent = "Error with BOLO contact government!"

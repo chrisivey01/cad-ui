@@ -11,7 +11,7 @@ export class JailInputComponent implements OnInit {
   citizenName;
   arrestingOfficer;
   reasonArrest;
-  status;
+  sent;
 
   constructor(private jailSystemService: JailSystemService) { }
 
@@ -26,6 +26,8 @@ export class JailInputComponent implements OnInit {
       reason: this.reasonArrest
     }
     this.jailSystemService.sendJailDetails(obj)
-    this.status = this.jailSystemService.updateStatus();
+    this.jailSystemService.dataLoaded.subscribe(data => {
+      this.sent = this.jailSystemService.updateStatus();
+    })
   }
 }

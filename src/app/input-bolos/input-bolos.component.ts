@@ -10,6 +10,8 @@ export class InputBolosComponent implements OnInit {
 
   reason;
   status;
+  dataLoaded;
+  sent;
   
   constructor(private bolosService: BolosService) { }
 
@@ -18,7 +20,9 @@ export class InputBolosComponent implements OnInit {
 
   sendBoloReport(){
     this.bolosService.sendBoloReason(this.reason)
-    this.status = this.bolosService.updateStatus();
+    this.bolosService.dataLoaded.subscribe(data => {
+      this.sent = this.bolosService.updateStatus();
+    })  
   }
 
 
