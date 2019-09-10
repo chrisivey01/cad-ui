@@ -22,6 +22,7 @@ export class InputBolosComponent implements OnInit {
     this.bolosService.sendBoloReason(this.reason)
     this.bolosService.dataLoaded.subscribe(data => {
       this.sent = this.bolosService.updateStatus();
+      this.reason = "";
     })  
   }
 

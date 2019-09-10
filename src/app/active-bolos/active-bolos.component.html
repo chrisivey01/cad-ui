@@ -1,4 +1,11 @@
-<div class="font-color">
+<div class="font-color card">
+<label>
+    <b>
+        <u>
+            Select the BOLO(s) to remove
+        </u>
+    </b>
+</label>
     <div class="centered-text" >
         {{sent}}
     </div>
@@ -8,7 +15,7 @@
         </ul>
     </div>
 
-    <button (click)="removeBolos()">
-        Delete
+    <button class="btn btn-warning" (click)="removeBolos()">
+        Remove
     </button>
 </div>

@@ -28,6 +28,9 @@ export class JailInputComponent implements OnInit {
     this.jailSystemService.sendJailDetails(obj)
     this.jailSystemService.dataLoaded.subscribe(data => {
       this.sent = this.jailSystemService.updateStatus();
+      this.citizenName = "";
+      this.arrestingOfficer = "";
+      this.reasonArrest = "";
     })
   }
 }

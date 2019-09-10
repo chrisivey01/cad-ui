@@ -1,4 +1,4 @@
-<div>
+<div class="card">
 
     <div class="centered-text">
         <div>{{sent}}</div>
@@ -16,6 +16,6 @@
         [ngModel]="reasonArrest" (ngModelChange)="reasonArrest = $event"></textarea>
     </div>
     <div>
-        <button (click)="sendJailReport()">Submit</button>
+        <button class="btn btn-warning" (click)="sendJailReport()">Submit</button>
     </div>
 </div>

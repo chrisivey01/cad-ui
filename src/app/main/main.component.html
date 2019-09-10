@@ -1,11 +1,19 @@
-<div class="font-color">
+<div class="card font-color">
 
-    <label>Input Citizen</label>
-    <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event"/>
-    <button (click)="loadData()">
-        Submit
-    </button>
+    <label>
+        <b>
+            <u>
+                Input Citizen
+            </u>
+        </b>
+    </label>
 
+    <div>
+        <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" />
+        <button class="btn btn-warning" (click)="loadData()">
+            Submit
+        </button>
+    </div>
     <ul class="list-items">
         <li *ngFor="let citizen of arrests">{{citizen.reason}}</li>
     </ul>

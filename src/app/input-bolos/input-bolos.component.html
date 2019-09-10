@@ -1,7 +1,17 @@
-<div>
+<div class="card">
+
+    <label class="font-color">
+        <b>
+            <u>
+                Input Bolo
+            </u>
+        </b>
+    </label>
     <div class="centered-text font-color">
         <div>{{sent}}</div>
     </div>
-    <input [ngModel]="reason" (ngModelChange)="reason = $event"/>
-    <button (click)="sendBoloReport()">Submit</button>
+    <div>
+        <input [ngModel]="reason" (ngModelChange)="reason = $event" />
+        <button class="btn btn-warning" (click)="sendBoloReport()">Submit</button>
+    </div>
 </div>
