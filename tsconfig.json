@@ -17,7 +17,9 @@
     ],
     "types": [
       "node",
-      "jest"
+      "jest",
+      "jquery",
+      "datatables.net"
     ],
     "lib": [
       "es2018",

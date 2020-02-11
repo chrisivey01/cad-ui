@@ -3,11 +3,9 @@
     color:white;
 }
 
-
 *{
     margin:0;
 }
-
 
 .list-items{
     height:150px;
@@ -15,12 +13,10 @@
     overflow:auto;
 }
 
-
 html,body{ 
     margin:0;
     height:100%;
 }
-
 
 .dataTables_info, .dataTables_filter, .dataTables_length, .paginate_button,
 .paging_simple_numbers, .previous, .disabled{

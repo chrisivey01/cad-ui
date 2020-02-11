@@ -1,5 +1,5 @@
-require('core-js');
-require('zone.js');
+import 'core-js';
+import 'zone.js';
 if (process.env.ENV === 'production') {
   // Production
 } else {
