@@ -11,19 +11,19 @@ module.exports = webpackMerge(commonConfig, {
     chunkFilename: '[id].chunk.js'
   },
 
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        loaders: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('src', 'client', 'tsconfig.json') }
-          } , 'angular2-template-loader'
-        ]
-      }
-    ]
-  },
+//   module: {
+//     rules: [
+//       {
+//         test: /\.ts$/,
+//         loaders: [
+//           {
+//             loader: 'awesome-typescript-loader',
+//             options: { configFileName: helpers.root('src', 'client', 'tsconfig.json') }
+//           } , 'angular2-template-loader'
+//         ]
+//       }
+//     ]
+//   },
   plugins: [
     // new ExtractTextPlugin('[name].css')
   ],

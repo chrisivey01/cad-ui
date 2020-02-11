@@ -19,7 +19,7 @@ module.exports = {
         loaders: [
           {
             loader: 'awesome-typescript-loader',
-            options: { configFileName: helpers.root('src', 'tsconfig.json') }
+            options: { configFileName: 'tsconfig.json' }
           } , 'angular2-template-loader'
         ]
       },
@@ -37,9 +37,8 @@ module.exports = {
     //     loader: ExtractCssChunks.extract(['style-loader','css-loader?sourceMap'])
     //   },
       {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw-loader'
+        test: /\.(css|scss)$/,
+        loaders: ['to-string-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
