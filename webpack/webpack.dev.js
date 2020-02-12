@@ -1,31 +1,30 @@
 var webpackMerge = require('webpack-merge');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
-var helpers = require('./helpers');
+const path = require('path');
+
 module.exports = webpackMerge(commonConfig, {
+  mode: 'development',
   devtool: 'cheap-module-eval-source-map',
-  output: {
-    path: helpers.root('dist'),
-    publicPath: 'http://localhost:8080/',
-    filename: '[name].js',
-    chunkFilename: '[id].chunk.js'
+  entry: [
+    path.join(process.cwd() ,'src/polyfills.ts'),
+    path.join(process.cwd() ,'src/vendor.ts'),
+    path.join(process.cwd() ,'src/main.ts'),
+  ],
+  module:{
+    rules:[
+      {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+        loader: 'file-loader?name=assets/[name].[ext]'
+      }
+    ],
   },
 
-//   module: {
-//     rules: [
-//       {
-//         test: /\.ts$/,
-//         loaders: [
-//           {
-//             loader: 'awesome-typescript-loader',
-//             options: { configFileName: helpers.root('src', 'client', 'tsconfig.json') }
-//           } , 'angular2-template-loader'
-//         ]
-//       }
-//     ]
-//   },
   plugins: [
-    // new ExtractTextPlugin('[name].css')
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true
+    })  
   ],
   devServer: {
     historyApiFallback: true,

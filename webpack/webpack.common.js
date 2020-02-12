@@ -1,39 +1,32 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts',
-  },
+
   resolve: {
     extensions: ['.ts', '.js'],
+    modules: ['src', 'node_modules'],
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        loaders: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: { configFileName: 'tsconfig.json' }
-          } , 'angular2-template-loader'
-        ]
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader'],
+        exclude: [/\.(spec|e2e)\.ts$/]
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: 'html-loader',
+        options: {
+          minimize:false
+        }
       },
-      {
-        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file-loader?name=assets/[name].[hash].[ext]'
-      },
+
+
+
       {
         test: /\.css$/,
-        use: ['to-string-loader','style-loader', 'css-loader']
+        use: ['to-string-loader','style-loader', 'css-loader', 'resolve-url-loader']
       },
       {
           test: require.resolve('jquery'),
@@ -56,9 +49,11 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)@angular/,
-      helpers.root('./src'), // location of your src
-      {} // a map of your routes
-    ),
+      path.resolve(__dirname, 'src'),  // location of your src
+      {
+          // your Angular Async Route paths relative to this root directory
+      }
+  ),
     new webpack.ProvidePlugin({
         "$": "jquery",
         "jQuery": "jquery"
@@ -66,9 +61,6 @@ module.exports = {
     // new webpack.optimize.CommonsChunkPlugin({
     //   name: ['app', 'vendor', 'polyfills']
     // }),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inject: true
-    })
+
   ]
 };

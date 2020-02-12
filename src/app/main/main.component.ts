@@ -1,5 +1,7 @@
 import { CadSystemService } from './../cad-system.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import Nui from '../util/Nui';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -18,9 +20,19 @@ export class MainComponent implements OnInit {
     })
   }
 
+  @HostListener('window:keyup', ['$event'])
+  handleKeyDown(event:KeyboardEvent){
+    if(event.keyCode === 27 || event.keyCode === 113) {
+      console.log('hi')
+      Nui.send('CloseUI');
+    }
+  }
+
+
+
+
   loadData(){
     this.cadSystemService.fetchArrestData(this.citizensName);
   }
-
 
 }

@@ -1,3 +1,6 @@
+import {APP_BASE_HREF} from '@angular/common';
+
+import { RouterModule } from '@angular/router';
 import { JailSystemService } from './jail-system.service';
 import { CadSystemService } from './cad-system.service';
 import { BolosService } from './bolos.service';
@@ -32,15 +35,17 @@ import { JailInputComponent } from './jail/jail-input/jail-input.component';
     JailInputComponent
   ],
   imports: [
-    BrowserModule,
+    RouterModule,
     AppRoutingModule,
+    BrowserModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
   ],
   providers: [CadSystemService,
     BolosService,
-    JailSystemService
+    JailSystemService,
+    {provide: APP_BASE_HREF, useValue: '/'}
     ]
     ,
   bootstrap: [AppComponent]
