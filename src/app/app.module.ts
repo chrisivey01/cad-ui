@@ -1,9 +1,9 @@
 import { APP_BASE_HREF } from "@angular/common";
 
 import { RouterModule } from "@angular/router";
-import { JailSystemService } from "./jail-system.service";
-import { CadSystemService } from "./cad-system.service";
-import { BolosService } from "./bolos.service";
+import { JailSystemService } from "./services/jail-system.service";
+import { CadSystemService } from "./services/cad-system.service";
+import { BolosService } from "./services/bolos.service";
 
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";

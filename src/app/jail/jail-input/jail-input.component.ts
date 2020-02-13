@@ -1,4 +1,4 @@
-import { JailSystemService } from './../../jail-system.service';
+import { JailSystemService } from '../../services/jail-system.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,4 +1,4 @@
-import { BolosService } from './../bolos.service';
+import { BolosService } from '../services/bolos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +12,7 @@ export class InputBolosComponent implements OnInit {
   status;
   dataLoaded;
   sent;
-  
+
   constructor(private bolosService: BolosService) { }
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class InputBolosComponent implements OnInit {
     this.bolosService.dataLoaded.subscribe(data => {
       this.sent = this.bolosService.updateStatus();
       this.reason = "";
-    })  
+    })
   }
 
 

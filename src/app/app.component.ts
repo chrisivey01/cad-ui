@@ -9,7 +9,7 @@ import Nui from './util/Nui';
 
 export class AppComponent {
   title = 'cad-ui';
-  toggle = true;
+  toggle = false;
   block = 'block';
   none = 'none';
   // ngOnInit(){
@@ -29,10 +29,9 @@ export class AppComponent {
   receiveMessage(e){
     if(e.data.openCad === true){
       this.toggle = true;
+    } else {
+      this.toggle = false;
     }
-    // else {
-    //   this.toggle = false;
-    // }
   }
 }
 

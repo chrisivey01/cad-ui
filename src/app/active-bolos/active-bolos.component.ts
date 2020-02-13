@@ -1,4 +1,4 @@
-import { BolosService } from '../bolos.service';
+import { BolosService } from '../services/bolos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,13 +13,13 @@ export class ActiveBolosComponent implements OnInit {
   itemsForDelete = [];
   deletedPopup;
   sent;
-  
+
 
   constructor(private bolosService:BolosService) { }
 
   ngOnInit() {
     this.loadData();
-    
+
     this.bolosService.dataLoaded.subscribe(()=>{
       this.obtainedBolos = this.bolosService.obtainBoloData();
 
@@ -44,7 +44,7 @@ export class ActiveBolosComponent implements OnInit {
       this.itemsForDelete.push(this.bolos[i])
     }else{
       this.bolos[i].delete = false
-      this.strikeElement($event.currentTarget, false)      
+      this.strikeElement($event.currentTarget, false)
       this.itemsForDelete.splice(this.itemsForDelete.indexOf(this.bolos[i]),1)
     }
   }
@@ -63,12 +63,12 @@ export class ActiveBolosComponent implements OnInit {
 
 
     this.bolosService.dataLoaded.subscribe(data => {
-      this.bolos = this.bolos.filter(bolo => 
+      this.bolos = this.bolos.filter(bolo =>
         !this.itemsForDelete.some(deletedBolo => bolo.id === deletedBolo.id))
-  
+
       this.sent = this.bolosService.updateStatus();
 
-    })  
+    })
 
     setTimeout(()=> { this.sent = "" }, 5000);
   }

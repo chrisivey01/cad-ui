@@ -1,4 +1,4 @@
-import { CadSystemService } from './../cad-system.service';
+import { CadSystemService } from '../services/cad-system.service';
 import { Component, OnInit, HostListener } from '@angular/core';
 import Nui from '../util/Nui';
 
