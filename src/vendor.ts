@@ -5,7 +5,7 @@
  import '@angular/core';
  import '@angular/common';
  import '@angular/material';
- import '@angular/material/prebuilt-themes/indigo-pink.css';
+ import 'indigo-pink.css';
 
  // RxJS
  import 'rxjs';
