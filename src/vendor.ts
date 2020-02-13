@@ -12,8 +12,8 @@
  // You can import js, ts, css, sass, ...
 // import 'bootstrap'
 import 'jquery';
-import 'popper.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'popper.js';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'datatables.net-dt/css/jquery.dataTables.css';
 // import './util/Nui.js'
 // import 'bootstrap';

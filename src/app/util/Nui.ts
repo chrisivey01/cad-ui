@@ -1,7 +1,8 @@
 export default {
     async send(event, data = {}) {
       /* eslint-disable no-unreachable */
-      return fetch(`http://police-cad/${event}`, {
+      console.log(event)
+      return fetch(`http://police_cad/${event}`, {
         method: 'post',
         headers: {
           'Content-type': 'application/json; charset=UTF-8',

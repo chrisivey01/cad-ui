@@ -1,7 +1,8 @@
 import 'datatables.net';
 import 'datatables.net-dt';
 import 'reflect-metadata';
-import 'zone.js'
+import 'zone.js';
+import Nui from './app/util/Nui';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
@@ -13,3 +14,4 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+

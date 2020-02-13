@@ -1,10 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-.font-color{
-    color:white;
-}
 
 *{
+    box-sizing: border-box;
     margin:0;
+}
+
+#main-container {
+    display:none;
+}
+
+.font-color{
+    color:white;
 }
 
 .list-items{
@@ -13,12 +19,8 @@
     overflow:auto;
 }
 
-html,body{ 
-    margin:0;
-    height:100%;
-}
-
 .dataTables_info, .dataTables_filter, .dataTables_length, .paginate_button,
 .paging_simple_numbers, .previous, .disabled{
     color:white !important;
 }
+

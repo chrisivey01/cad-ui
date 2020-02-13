@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-
+import { Key } from 'readline';
+import Nui from './util/Nui';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,9 +13,17 @@ export class AppComponent {
   block = 'block';
   none = 'none';
   // ngOnInit(){
+    
   @HostListener('window:message', ['$event'])
   onMessage(event) {
     this.receiveMessage(event);
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  onKeyDown(event:KeyboardEvent){
+    if (event.keyCode === 27) {
+      Nui.send('CloseUI');
+    }
   }
 
   receiveMessage(e){
