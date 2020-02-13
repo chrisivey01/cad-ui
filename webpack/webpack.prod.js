@@ -6,16 +6,10 @@ const path = require('path');
 module.exports = webpackMerge(commonConfig, {
   mode: 'production',
   devtool: 'source-map',
-  entry: [
-    path.join(process.cwd() ,'src/polyfills.ts'),
-    path.join(process.cwd() ,'src/vendor.ts'),
-    path.join(process.cwd() ,'src/main.ts'),
-  ],
-  
+
   output: {
     path: path.resolve(process.cwd(), 'html'),
     filename: '[name].js',
-    // publicPath: '/' 
   },
 
   module:{

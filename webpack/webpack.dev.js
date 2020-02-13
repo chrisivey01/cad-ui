@@ -6,11 +6,7 @@ const path = require('path');
 module.exports = webpackMerge(commonConfig, {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-    path.join(process.cwd() ,'src/polyfills.ts'),
-    path.join(process.cwd() ,'src/vendor.ts'),
-    path.join(process.cwd() ,'src/main.ts'),
-  ],
+
   module:{
     rules:[
       {
@@ -24,7 +20,7 @@ module.exports = webpackMerge(commonConfig, {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: true
-    })  
+    })
   ],
   devServer: {
     historyApiFallback: true,

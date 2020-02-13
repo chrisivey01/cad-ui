@@ -2,7 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-
+  entry: [
+    path.join(process.cwd() ,'src/polyfills.ts'),
+    path.join(process.cwd() ,'src/vendor.ts'),
+    path.join(process.cwd() ,'src/main.ts'),
+  ],
   resolve: {
     extensions: ['.ts', '.js'],
     modules: ['src', 'node_modules'],
@@ -11,7 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader'],
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
         exclude: [/\.(spec|e2e)\.ts$/]
       },
       {
@@ -21,9 +25,6 @@ module.exports = {
           minimize:false
         }
       },
-
-
-
       {
         test: /\.css$/,
         use: ['to-string-loader','style-loader', 'css-loader', 'resolve-url-loader']
@@ -45,22 +46,9 @@ module.exports = {
   },
 
   plugins: [
-    // Workaround for angular/angular#11580
-    new webpack.ContextReplacementPlugin(
-      // The (\\|\/) piece accounts for path separators in *nix and Windows
-      /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, 'src'),  // location of your src
-      {
-          // your Angular Async Route paths relative to this root directory
-      }
-  ),
     new webpack.ProvidePlugin({
         "$": "jquery",
         "jQuery": "jquery"
       }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: ['app', 'vendor', 'polyfills']
-    // }),
-
   ]
 };

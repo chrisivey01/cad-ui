@@ -4,20 +4,18 @@
  import '@angular/platform-browser-dynamic';
  import '@angular/core';
  import '@angular/common';
-  
+ import '@angular/material';
  // RxJS
  import 'rxjs';
-  
+
  // Other vendors for example jQuery, Lodash or Bootstrap
  // You can import js, ts, css, sass, ...
 // import 'bootstrap'
+import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 import 'jquery';
-// import 'popper.js';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'datatables.net-dt/css/jquery.dataTables.css';
-// import './util/Nui.js'
-// import 'bootstrap';
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 
 
 

@@ -1,20 +1,22 @@
-<div class="card font-color">
-
-    <label>
-        <b>
-            <u>
-                Input Citizen
-            </u>
-        </b>
-    </label>
-
-    <div>
-        <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" />
-        <button class="btn btn-warning" (click)="loadData()">
-            Submit
-        </button>
-    </div>
-    <ul class="list-items">
-        <li *ngFor="let citizen of arrests">{{citizen.reason}}</li>
-    </ul>
+<div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Citizen's Name</mat-label>
+      <input
+        [ngModel]="citizensName"
+        (ngModelChange)="citizensName = $event"
+        matInput
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="loadData()">
+      Submit
+    </button>
+  </div>
+</div>
+<div>
+  <ul class="list-items">
+    <li *ngFor="let citizen of arrests">{{ citizen.reason }}</li>
+  </ul>
 </div>

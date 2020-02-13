@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cad-ui"
+    }
+  },
+  "defaultProject": "cad-ui",
+  "cli": {
+    "analytics": "4b5ba333-65de-4f2c-8a7d-50f8d3323ac0"
+  }
 }

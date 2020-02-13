@@ -1,6 +1,6 @@
 import 'datatables.net';
 import 'datatables.net-dt';
-import 'reflect-metadata';
+// import 'reflect-metadata';
 import 'zone.js';
 import Nui from './app/util/Nui';
 import { enableProdMode } from '@angular/core';
