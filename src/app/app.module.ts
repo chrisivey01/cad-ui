@@ -12,7 +12,6 @@ import { BolosService } from "./services/bolos.service";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./components/header/header.component";
 import { MainComponent } from "./components/main/main.component";
 import { ActiveBolosComponent } from "./components/active-bolos/active-bolos.component";
 import { InputBolosComponent } from "./components/input-bolos/input-bolos.component";
