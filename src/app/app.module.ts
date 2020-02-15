@@ -36,7 +36,6 @@ import { MatRippleModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     MainComponent,
     ActiveBolosComponent,
     InputBolosComponent,
