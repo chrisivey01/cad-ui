@@ -1,6 +1,6 @@
-var webpackMerge = require('webpack-merge');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var commonConfig = require('./webpack.common.js');
+const webpackMerge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const commonConfig = require('./webpack.common.js');
 const path = require('path');
 
 module.exports = webpackMerge(commonConfig, {

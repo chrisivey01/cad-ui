@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -7,10 +6,12 @@ module.exports = {
     path.join(process.cwd() ,'src/vendor.ts'),
     path.join(process.cwd() ,'src/main.ts'),
   ],
+  
   resolve: {
     extensions: ['.ts', '.js'],
     modules: ['src', 'node_modules'],
   },
+
   module: {
     rules: [
       {
@@ -33,26 +34,6 @@ module.exports = {
         test: /\.css$/,
         use: ['to-string-loader','style-loader', 'css-loader', 'resolve-url-loader']
       },
-      {
-          test: require.resolve('jquery'),
-          use: [
-              {
-                  loader: 'expose-loader',
-                  options: 'jQuery',
-              },
-              {
-                  loader: 'expose-loader',
-                  options: '$',
-              },
-          ],
-      },
     ]
   },
-
-  plugins: [
-    new webpack.ProvidePlugin({
-        "$": "jquery",
-        "jQuery": "jquery"
-      }),
-  ]
 };

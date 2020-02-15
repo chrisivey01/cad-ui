@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon class="togglerSideNav">menu</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
+        <mat-selection-list>
+            <mat-list-item *ngFor="let item of links" mat-ripple class="item">
+                <a mat-list-item [routerLink]="item.path">
+                    <div class="content">
+                        {{item.label}}
+                    </div>
+                </a>
+            </mat-list-item>
+        </mat-selection-list>
+    </mat-sidenav>
+    <mat-sidenav-content ngClass="content-container">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

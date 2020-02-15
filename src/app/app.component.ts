@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { Key } from 'readline';
 import Nui from './util/Nui';
 @Component({
   selector: 'app-root',
@@ -8,11 +7,10 @@ import Nui from './util/Nui';
 })
 
 export class AppComponent {
+  opened: boolean;
   title = 'cad-ui';
   toggle = false;
   block = 'block';
-  none = 'none';
-  // ngOnInit(){
 
   @HostListener('window:message', ['$event'])
   onMessage(event) {
@@ -34,4 +32,3 @@ export class AppComponent {
     }
   }
 }
-

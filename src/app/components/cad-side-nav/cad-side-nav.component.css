@@ -1,0 +1,41 @@
+.content-container{
+    background-image: url(../../../assets/police.jpg);
+    max-width: 1180px;
+    margin: auto;
+    background-size: 100% 100%;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+a{
+    text-decoration:none;
+    width:100%;
+    padding: 0 16px;
+    height: inherit;
+}
+
+mat-selection-list{
+    background: rgba(0,0,0,.03);
+    height:100%;
+    overflow:hidden;
+}
+
+.content{
+    display:flex;
+    align-items:center;
+}
+
+.item:hover{
+    background-color:#eaeded;
+    width:100%;
+    display:flex;
+    align-items:center;
+}
+
+.mat-ripple{
+    height:40px;
+}
+
+.mat-list-base {
+    padding-top:0px !important;
+}

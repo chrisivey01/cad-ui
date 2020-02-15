@@ -1,0 +1,13 @@
+.centered-text{
+    display:flex;
+    justify-content: center;
+}
+
+
+.card{
+    width:800px;
+    background:transparent;
+    padding:20px;
+    border-style:solid;
+    border-width:medium;
+}

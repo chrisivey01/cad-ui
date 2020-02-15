@@ -1,10 +1,10 @@
-import { JailInputComponent } from './jail/jail-input/jail-input.component';
-import { JailInfoComponent } from './jail/jail-info/jail-info.component';
-import { MainComponent } from './main/main.component';
-import { JailComponent } from './jail/jail.component';
-import { ActiveBolosComponent } from './active-bolos/active-bolos.component';
-import { InputBolosComponent } from './input-bolos/input-bolos.component';
-import { WarrantComponent } from './warrant/warrant.component';
+import { JailInputComponent } from './components/jail/jail-input/jail-input.component';
+import { JailInfoComponent } from './components/jail/jail-info/jail-info.component';
+import { MainComponent } from './components/main/main.component';
+import { JailComponent } from './components/jail/jail.component';
+import { ActiveBolosComponent } from './components/active-bolos/active-bolos.component';
+import { InputBolosComponent } from './components/input-bolos/input-bolos.component';
+import { WarrantComponent } from './components/warrant/warrant.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

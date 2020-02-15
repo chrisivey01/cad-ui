@@ -1,32 +1,38 @@
 import { APP_BASE_HREF } from "@angular/common";
 
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+
 import { JailSystemService } from "./services/jail-system.service";
 import { CadSystemService } from "./services/cad-system.service";
 import { BolosService } from "./services/bolos.service";
 
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { HttpClientModule } from "@angular/common/http";
-import { DataTablesModule } from "angular-datatables";
-
-import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./header/header.component";
-import { MainComponent } from "./main/main.component";
-import { ActiveBolosComponent } from "./active-bolos/active-bolos.component";
-import { InputBolosComponent } from "./input-bolos/input-bolos.component";
-import { WarrantComponent } from "./warrant/warrant.component";
-import { JailComponent } from "./jail/jail.component";
-import { JailInfoComponent } from "./jail/jail-info/jail-info.component";
-import { JailInputComponent } from "./jail/jail-input/jail-input.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { MainComponent } from "./components/main/main.component";
+import { ActiveBolosComponent } from "./components/active-bolos/active-bolos.component";
+import { InputBolosComponent } from "./components/input-bolos/input-bolos.component";
+import { WarrantComponent } from "./components/warrant/warrant.component";
+import { JailComponent } from "./components/jail/jail.component";
+import { JailInfoComponent } from "./components/jail/jail-info/jail-info.component";
+import { JailInputComponent } from "./components/jail/jail-input/jail-input.component";
+import { CadSideNavComponent } from './components/cad-side-nav/cad-side-nav.component';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatListModule } from '@angular/material/list';
+import { MatRippleModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +44,8 @@ import { MatButtonModule } from "@angular/material/button";
     WarrantComponent,
     JailComponent,
     JailInfoComponent,
-    JailInputComponent
+    JailInputComponent,
+    CadSideNavComponent
   ],
   imports: [
     RouterModule,
@@ -46,12 +53,16 @@ import { MatButtonModule } from "@angular/material/button";
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule,
+    MatSidenavModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatButtonToggleModule,
+    MatListModule,
+    MatRippleModule
   ],
   providers: [
     CadSystemService,
@@ -61,4 +72,4 @@ import { MatButtonModule } from "@angular/material/button";
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
