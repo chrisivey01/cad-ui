@@ -66,7 +66,7 @@ import { MatRippleModule } from '@angular/material/core';
     MainService,
     BolosService,
     JailSystemService,
-    { provide: APP_BASE_HREF, useValue: "/" }
+    { provide: APP_BASE_HREF, useValue: "/" },
   ],
   bootstrap: [AppComponent]
 })

@@ -34,10 +34,6 @@ module.exports = {
         test: /\.css$/,
         use: ['to-string-loader','style-loader', 'css-loader', 'resolve-url-loader']
       },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }
     ]
   },
 };

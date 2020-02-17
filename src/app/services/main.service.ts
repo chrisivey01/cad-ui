@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core'
-import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CitizensRequest } from '../models/citizens.request';
-import json from '../json/player.json';
+import { Citizens } from '../models/citizens.model';
+import data from '../json/player.json';
+import { Observable } from 'rxjs';
+
 @Injectable()
 export class MainService {
+  json = data;
 
   constructor(private http:HttpClient){}
 
-  getCitizenData(citizensRequest:CitizensRequest){
-    return this.http.post("json",citizensRequest)
+  getCitizenData(citizensRequest): Observable<Citizens>{
+    return this.http.post<Citizens>(this.json, citizensRequest)
   }
 
 }

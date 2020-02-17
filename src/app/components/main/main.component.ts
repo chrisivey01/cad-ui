@@ -11,24 +11,27 @@ import { Citizens } from '../../models/citizens.model';
 })
 export class MainComponent implements OnInit {
 
-  citizensName;
-  firstName;
-  lastName;
-  citizensRecord;
+  citizensName: string;
+  firstName: string;
+  lastName: string;
+  citizensRecord: any;
 
+  citizens:Citizens;
 
-  constructor(private mainService:MainService, private citizensRequest:CitizensRequest) { }
+  constructor(private mainService:MainService) { }
 
   ngOnInit() {
 
   }
 
   getData(){
-    this.citizensRequest.firstname = this.citizensName.split()[0];
-    this.citizensRequest.lastname = this.citizensName.split()[1];
+    this.firstName = this.citizensName.split(" ")[0];
+    this.lastName = this.citizensName.split(" ")[1];
 
-    this.mainService.getCitizenData(this.citizensRequest)
-      .subscribe(citizens:Citizens)
+    this.mainService.getCitizenData(this.citizens)
+      .subscribe(data => {
+        console.log(data)
+      })
   }
       // this.cadSystemService.dataLoaded.subscribe(()=>{
     //   this.arrests = this.cadSystemService.obtainArrestData();
