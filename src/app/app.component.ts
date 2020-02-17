@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'cad-ui';
   toggle = false;
   block = 'block';
+  none = 'none';
 
   @HostListener('window:message', ['$event'])
   onMessage(event) {

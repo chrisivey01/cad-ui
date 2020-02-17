@@ -1,6 +1,8 @@
-import { CadSystemService } from '../../services/cad-system.service';
-import { Component, OnInit, HostListener } from '@angular/core';
-import Nui from '../../util/Nui';
+import { MainService } from '../../services/main.service';
+import { Component, OnInit } from '@angular/core';
+import player from '../json/player.json';
+import { CitizensRequest } from '../../models/citizens.request';
+import { Citizens } from '../../models/citizens.model';
 
 @Component({
   selector: 'app-main',
@@ -9,25 +11,36 @@ import Nui from '../../util/Nui';
 })
 export class MainComponent implements OnInit {
 
-  arrests;
   citizensName;
+  firstName;
+  lastName;
+  citizensRecord;
 
-  constructor(private cadSystemService:CadSystemService) { }
+
+  constructor(private mainService:MainService, private citizensRequest:CitizensRequest) { }
 
   ngOnInit() {
-    this.cadSystemService.dataLoaded.subscribe(()=>{
-      this.arrests = this.cadSystemService.obtainArrestData();
-    })
+
   }
 
-  @HostListener('window:keyup', ['$event'])
-  handleKeyDown(event:KeyboardEvent){
-    if(event.keyCode === 27 || event.keyCode === 113) {
-      Nui.send('CloseUI');
-    }
-  }
+  getData(){
+    this.citizensRequest.firstname = this.citizensName.split()[0];
+    this.citizensRequest.lastname = this.citizensName.split()[1];
 
-  loadData(){
-    this.cadSystemService.fetchArrestData(this.citizensName);
+    this.mainService.getCitizenData(this.citizensRequest)
+      .subscribe(citizens:Citizens)
   }
+      // this.cadSystemService.dataLoaded.subscribe(()=>{
+    //   this.arrests = this.cadSystemService.obtainArrestData();
+    // })
+  // @HostListener('window:keyup', ['$event'])
+  // handleKeyDown(event:KeyboardEvent){
+  //   if(event.keyCode === 27 || event.keyCode === 113) {
+  //     Nui.send('CloseUI');
+  //   }
+  // }
+
+  // loadData(){
+  //   this.cadSystemService.fetchArrestData(this.citizensName);
+  // }
 }

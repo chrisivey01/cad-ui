@@ -1,8 +1,8 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    // "baseUrl": "/",
-    // "outDir": "./dist/out-tsc",
+    "resolveJsonModule": true,
+    "esModuleInterop": true ,
     "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
@@ -18,8 +18,6 @@
     "types": [
       "node",
       "jest",
-      "jquery",
-      "datatables.net"
     ],
     "lib": [
       "es2018",

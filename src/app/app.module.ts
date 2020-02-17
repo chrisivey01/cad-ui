@@ -6,8 +6,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
+import { MainService } from "./services/main.service";
 import { JailSystemService } from "./services/jail-system.service";
-import { CadSystemService } from "./services/cad-system.service";
 import { BolosService } from "./services/bolos.service";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -63,7 +63,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatRippleModule
   ],
   providers: [
-    CadSystemService,
+    MainService,
     BolosService,
     JailSystemService,
     { provide: APP_BASE_HREF, useValue: "/" }
