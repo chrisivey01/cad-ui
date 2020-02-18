@@ -1,10 +1,11 @@
 export interface Citizens{
-  firstname:string,
-  lastname:string,
-  sex:string,
-  jailed:number,
-  height:number,
-  dateofbirth:string,
-  job:string,
-  previousJails:[]
+  firstname:string;
+  lastname:string;
+  sex:string;
+  jailed:number;
+  height:number;
+  dateofbirth:string;
+  job:string;
+  sentence:number;
+  arrestingOfficer:string;
 }

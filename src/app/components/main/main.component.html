@@ -10,6 +10,14 @@
     </mat-form-field>
   </div>
   <div>
+    <div *ngIf="info$"> 
+        {{info$}}
+        <ul>
+          <li *ngFor="let citizen of info$">{{citizen.arrestingOfficer}}</li>
+        </ul>
+    </div>
+  </div>
+  <div>
     <button mat-raised-button color="primary" (click)="getData()">
       Submit
     </button>

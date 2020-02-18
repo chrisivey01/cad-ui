@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
 import { Citizens } from '../models/citizens.model';
-import data from '../json/player.json';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class MainService {
-  json = data;
-
   constructor(private http:HttpClient){}
 
-  getCitizenData(citizensRequest): Observable<Citizens>{
-    return this.http.post<Citizens>(this.json, citizensRequest)
-  }
 
+  // SELECT u.id, u.firstname, u.lastname, u.sex, u.jailed, u.height, u.dateofbirth, u.job, j.sentence, j.arrestingOfficer  FROM users u, jail j WHERE u.id = j.id AND u.firstName = 'Pedro' AND u.lastName = 'Chupador'
+
+  getCitizenData(firstName, lastName): Observable<Citizens>{
+    const event = 'FindCitizen';
+    const citizensName = {
+      firstname:firstName,
+      lastname:lastName
+    }
+    console.log('here')
+    return this.http.post<Citizens>(`http://police_cad/${event}`, citizensName)
+  }
 }
