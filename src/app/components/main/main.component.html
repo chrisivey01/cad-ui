@@ -1,25 +1,50 @@
 <div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Citizen's Name</mat-label>
-      <input
-        [ngModel]="citizensName"
-        (ngModelChange)="citizensName = $event"
-        matInput
-      />
-    </mat-form-field>
-  </div>
-  <div>
-    <div *ngIf="info$"> 
-        {{info$}}
-        <ul>
-          <li *ngFor="let citizen of info$">{{citizen.arrestingOfficer}}</li>
-        </ul>
+  <div class="citizen-info-container">
+    <div class="search-wrapper">
+      <div class="search-citizen-container">
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Citizen's Name</mat-label>
+            <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" matInput />
+          </mat-form-field>
+        </div>
+        <div class="search-button">
+          <button mat-raised-button color="primary" (click)="getData()">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <mat-list *ngIf="citizenInfo$">
+        <h3 mat-subheader>Citizen Information</h3>
+        <mat-list-item>
+          <mat-icon mat-list-icon>account_circle</mat-icon>
+          <p mat-line>{{citizenInfo$.firstname}}</p>
+          <p mat-line>{{citizenInfo$.lastname}}</p>
+          <p mat-line>{{citizenInfo$.sex}}</p>
+          <p mat-line>{{citizenInfo$.height}}</p>
+          <p mat-line>{{citizenInfo$.dateofbirth}}</p>
+          <p mat-line>{{citizenInfo$.job}}</p>
+          <p mat-line>{{citizenInfo$.phone_number}}</p>      
+        </mat-list-item>
+      </mat-list>
     </div>
   </div>
+  <mat-divider></mat-divider>
   <div>
-    <button mat-raised-button color="primary" (click)="getData()">
-      Submit
-    </button>
+    <mat-tab-group *ngIf=citizenInfo$>
+      <mat-tab *ngFor="let arrest of citizenInfo$.jails; let i = index" [label]=i+1>
+        <div>
+          <label>Arresting officer: </label>{{arrest.arrestingOfficer}}
+        </div>
+        <div>
+          <label>Reason: </label>{{arrest.reason}}
+        </div>
+        <div>
+          <label>Sentence: </label>{{arrest.sentence}}
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>

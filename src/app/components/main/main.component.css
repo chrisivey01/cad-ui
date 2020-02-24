@@ -1,18 +1,15 @@
-.card{
-    width:800px;
-    background:transparent;
-    padding:20px;
-    border-style:solid;
-    border-width:medium;
-    display:hidden;
+.search-citizen-container{
+    display:flex;
+    padding:10px;
 }
 
-
-.list-items{
-    height:300px;
-    overflow:auto;
+.citizen-info-container{
+    display:flex;
+    justify-content:space-around;
+    margin: 0px 25px 0 25px;
 }
 
-li{
-    margin:10px;
+.search-button{
+    align-items: center;
+    display: flex;
 }

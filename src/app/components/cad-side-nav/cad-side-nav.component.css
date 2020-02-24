@@ -1,11 +1,10 @@
-.content-container{
-    background-image: url(../../../assets/police.jpg);
+/* .content-container{
     max-width: 1180px;
     margin: auto;
     background-size: 100% 100%;
     min-height: 600px;
     overflow: hidden;
-}
+} */
 
 a{
     text-decoration:none;
@@ -15,14 +14,20 @@ a{
 }
 
 mat-selection-list{
-    background: rgba(0,0,0,.03);
+    background: #24292E;
     height:100%;
     overflow:hidden;
 }
 
+/* mat-sidenav-container {
+    height:600px;
+} */
+
+
 .content{
     display:flex;
     align-items:center;
+    color:#dad7dc;
 }
 
 .item:hover{

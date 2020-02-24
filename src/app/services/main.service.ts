@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http';
-import { Citizens } from '../models/citizens.model';
+import { Citizen } from '../models/citizen.model';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -10,13 +10,13 @@ export class MainService {
 
   // SELECT u.id, u.firstname, u.lastname, u.sex, u.jailed, u.height, u.dateofbirth, u.job, j.sentence, j.arrestingOfficer  FROM users u, jail j WHERE u.id = j.id AND u.firstName = 'Pedro' AND u.lastName = 'Chupador'
 
-  getCitizenData(firstName, lastName): Observable<Citizens>{
+  getCitizenData(firstName, lastName){
     const event = 'FindCitizen';
-    const citizensName = {
+    const citizenName = {
       firstname:firstName,
       lastname:lastName
     }
-    console.log('here')
-    return this.http.post<Citizens>(`http://police_cad/${event}`, citizensName)
+    return this.http.post<Citizen>(`http://police_cad/${event}`, citizenName)
+    // return this.http.get<Citizen>(json)
   }
 }

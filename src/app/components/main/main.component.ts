@@ -1,9 +1,7 @@
+import { Observable } from 'rxjs';
 import { MainService } from '../../services/main.service';
 import { Component, OnInit } from '@angular/core';
-import player from '../json/player.json';
-import { CitizensRequest } from '../../models/citizens.request';
-import { Citizens } from '../../models/citizens.model';
-
+import { Citizen } from '../../models/citizen.model';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -15,7 +13,7 @@ export class MainComponent implements OnInit {
   firstName: string;
   lastName: string;
   citizensRecord: any;
-  info$: any;
+  citizenInfo$: Citizen;
   constructor(private mainService:MainService) { }
 
   ngOnInit() {
@@ -27,23 +25,6 @@ export class MainComponent implements OnInit {
     this.lastName = this.citizensName.split(" ")[1];
 
     this.mainService.getCitizenData(this.firstName, this.lastName)
-      .subscribe(response => {
-        this.info$ = response;
-      })
-
-        // error => console.log(error)
+      .subscribe(res => this.citizenInfo$ = res[0])
     }
-      // this.cadSystemService.dataLoaded.subscribe(()=>{
-    //   this.arrests = this.cadSystemService.obtainArrestData();
-    // })
-  // @HostListener('window:keyup', ['$event'])
-  // handleKeyDown(event:KeyboardEvent){
-  //   if(event.keyCode === 27 || event.keyCode === 113) {
-  //     Nui.send('CloseUI');
-  //   }
-  // }
-
-  // loadData(){
-  //   this.cadSystemService.fetchArrestData(this.citizensName);
-  // }
 }

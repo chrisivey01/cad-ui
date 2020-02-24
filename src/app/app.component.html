@@ -1,4 +1,1 @@
-<div class="container" [style.display]="toggle ? block : none">
-<!-- <div class="container"> -->
-  <app-cad-side-nav></app-cad-side-nav>
-</div>
+<app-cad-side-nav [ngClass] = "toggle ? 'container' : 'hide-container'"></app-cad-side-nav>

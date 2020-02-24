@@ -15,8 +15,4 @@
     overflow:auto;
 }
 
-.dataTables_info, .dataTables_filter, .dataTables_length, .paginate_button,
-.paging_simple_numbers, .previous, .disabled{
-    color:white !important;
-}
 

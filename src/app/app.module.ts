@@ -31,6 +31,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -60,7 +62,10 @@ import { MatRippleModule } from '@angular/material/core';
     MatToolbarModule,
     MatButtonToggleModule,
     MatListModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTabsModule,
+    MatCardModule
+
   ],
   providers: [
     MainService,

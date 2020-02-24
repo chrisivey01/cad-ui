@@ -1,9 +1,33 @@
 
 .container{
   /* background-image: url(../assets/police.jpg); */
+  background-color: #18181b;
   max-width: 1180px;
   margin: auto;
-  background-size: 100% 100%;
-  min-height: 600px;
   display:block;
+  height:600px;
 }
+
+.hide-container{
+  /* background-image: url(../assets/police.jpg); */
+  background-color: #18181b;
+  max-width: 1180px;
+  margin: auto;
+  display:none;
+  height:600px;
+}
+
+mat-sidenav-container {
+  height: 100%;
+  background-size: 100% 100%;
+  overflow:hidden;
+  background-color: #18181b;
+}
+
+mat-card {
+  height:auto;
+}
+
+/* mat-card { */
+
+/* } */
