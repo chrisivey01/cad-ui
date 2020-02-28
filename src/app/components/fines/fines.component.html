@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Citizen's Name</mat-label>
+                <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" matInput />
+            </mat-form-field>
+            <span class="shift-right">
+                <button mat-raised-button color="primary" (click)="postFinesData()">
+                    Fine Citizen
+                </button>
+            </span>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>Total Fine Cost:</mat-label>
+            <input matInput type="number" [(ngModel)]='totalCost' class="example-right-align">
+            <span matPrefix>$&nbsp;</span>
+        </mat-form-field>
+    </div>
+
+    <div class="fines-container">
+        <div class="jail-items">
+            <mat-selection-list class="felonies">
+                <mat-list-option *ngFor="let citation of citations1; let i = index" (click)="getFines(true, false, false, i, citation.cost)">
+                    {{citation.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="jail-items">
+            <mat-selection-list class="felonies">
+                <mat-list-option *ngFor="let citation of citations2; let i = index" (click)="getFines(false, true, false, i, citation.cost)">
+                    {{citation.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="jail-items">
+            <mat-selection-list class="felonies">
+                <mat-list-option *ngFor="let citation of citations3; let i = index" (click)="getFines(false, false, true, i, citation.cost)">
+                    {{citation.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </div>
+</div>

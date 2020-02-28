@@ -1,0 +1,15 @@
+.search-tally-container{
+    display:flex;
+    width:100%;
+    justify-content:space-around;
+    margin-top:10px;
+}
+
+.fines-container{
+    display:flex;
+    height: inherit;
+    flex-wrap: wrap;
+    margin: auto;
+    overflow: hidden;
+    justify-content: center;
+}

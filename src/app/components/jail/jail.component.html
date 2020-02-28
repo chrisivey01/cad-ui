@@ -1,13 +1,67 @@
-
-<div class="font-color">
-
-        <button class="btn btn-danger" [routerLink]="['/jail/jail-info']">
-            Jail Info
-        </button>
-    
-        <button class="btn btn-danger" [routerLink]="['/jail/jail-input']">
-            Jail Input
-        </button>
-
-        <router-outlet></router-outlet>
+<div class="jail-container">
+    <div class="row">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Citizen's Name</mat-label>
+                <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" matInput />
+            </mat-form-field>
+            <span class="shift-right">
+                <button mat-raised-button color="primary" (click)="postJailData()">
+                    Process Citizen
+                </button>
+            </span>
+        </div>
+        <div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Total Jail Sentence:</mat-label>
+                    <input matInput type="number" [(ngModel)]='totalTime' class="example-right-align">
+                    <span matSuffix>months</span>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Total Fine Cost :</mat-label>
+                    <input matInput type="number" [(ngModel)]='totalCost' class="example-right-align">
+                    <span matPrefix>$&nbsp;</span>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="jail-container">
+        <div class="jail-items">
+            <h3 matSubheader>Misdemeanors</h3>
+            <mat-selection-list>
+                <mat-list-option *ngFor="let misdemeanor of misdemeanors; let i = index" (click)="getTotals(true, false, false, false, i, misdemeanor.cost, misdemeanor.sentence)">
+                    {{misdemeanor.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="jail-items">
+            <h3 matSubheader>Felonies</h3>
+            <mat-selection-list class="felonies">
+                <mat-list-option *ngFor="let felony of felonies1; let i = index" (click)="getTotals(false, true, false, false, i, felony.cost, felony.sentence)">
+                    {{felony.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+        <div class="jail-items">
+            <h3 matSubheader>&nbsp;</h3>
+            <mat-selection-list class="felonies">
+                <mat-list-option *ngFor="let felony of felonies2; let i = index" (click)="getTotals(false, false, true,false, i, felony.cost, felony.sentence)">
+                    {{felony.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="jail-items">
+            <h3 matSubheader>Major Felonies</h3>
+            <mat-selection-list>
+                <mat-list-option *ngFor="let major of majorFelonies; let i = index" (click)="getTotals(false, false, false, true, i, major.cost, major.sentence)">
+                    {{major.reason}}
+                </mat-list-option>
+            </mat-selection-list>
+        </div>
+    </div>
 </div>

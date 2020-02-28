@@ -14,23 +14,23 @@ export class CadSideNavComponent implements OnInit {
     },
     {
       label:'Jail',
-      path:"/jail/jail-info"
+      path:"/jail"
     },
     {
-      label:'Active BOLOs',
-      path:"/active-bolos"
-    },
-    {
-      label:'Input BOLOs',
-      path:"/input-bolos"
-    },
-    {
-      label:'Warrants',
-      path:"/warrants"
+      label:'Fines',
+      path:"/fines"
     }
+    // ,
+    // {
+    //   label:'Active BOLOs',
+    //   path:"/active-bolos"
+    // },
+    // {
+    //   label:'Input BOLOs',
+    //   path:"/input-bolos"
+    // }
 
-      
-    ]
+  ]
   constructor() { }
 
   ngOnInit(): void {

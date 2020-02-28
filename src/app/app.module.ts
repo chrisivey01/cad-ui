@@ -7,8 +7,9 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { MainService } from "./services/main.service";
-import { JailSystemService } from "./services/jail-system.service";
+import { JailService } from "./services/jail.service";
 import { BolosService } from "./services/bolos.service";
+import { FinesService } from './services/fines.service';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -17,9 +18,8 @@ import { ActiveBolosComponent } from "./components/active-bolos/active-bolos.com
 import { InputBolosComponent } from "./components/input-bolos/input-bolos.component";
 import { WarrantComponent } from "./components/warrant/warrant.component";
 import { JailComponent } from "./components/jail/jail.component";
-import { JailInfoComponent } from "./components/jail/jail-info/jail-info.component";
-import { JailInputComponent } from "./components/jail/jail-input/jail-input.component";
 import { CadSideNavComponent } from './components/cad-side-nav/cad-side-nav.component';
+import { FinesComponent } from './components/fines/fines.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -43,9 +43,8 @@ import { MatCardModule } from '@angular/material/card';
     InputBolosComponent,
     WarrantComponent,
     JailComponent,
-    JailInfoComponent,
-    JailInputComponent,
-    CadSideNavComponent
+    CadSideNavComponent,
+    FinesComponent
   ],
   imports: [
     RouterModule,
@@ -70,7 +69,8 @@ import { MatCardModule } from '@angular/material/card';
   providers: [
     MainService,
     BolosService,
-    JailSystemService,
+    JailService,
+    FinesService,
     { provide: APP_BASE_HREF, useValue: "/" },
   ],
   bootstrap: [AppComponent]
