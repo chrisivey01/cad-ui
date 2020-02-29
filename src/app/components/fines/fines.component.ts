@@ -8,7 +8,7 @@ import { Fines } from '../../models/fines.model';
 })
 export class FinesComponent implements OnInit {
   totalCost = 0;
-  citizensName: string;
+  citizensSSN: string;
   fines: Fines;
   citations1 = [
     {
@@ -144,15 +144,14 @@ export class FinesComponent implements OnInit {
   }
 
   postFinesData(){
-    let name = this.citizensName.split(" ")
-
+    let ssn = this.citizensSSN
     this.fines = {
-      firstName: name[0],
-      lastName: name[1],
+      ssn: parseInt(ssn),
       totalCost: this.totalCost
     }
 
     this.finesService.postFinesData(this.fines).subscribe();
+    this.citizensSSN = ''
     this.totalCost = 0;
 
   }

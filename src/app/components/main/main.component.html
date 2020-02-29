@@ -4,8 +4,8 @@
       <div class="search-citizen-container">
         <div>
           <mat-form-field appearance="outline">
-            <mat-label>Citizen's Name</mat-label>
-            <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" matInput />
+            <mat-label>Citizen's SSN</mat-label>
+            <input [ngModel]="citizensSSN" (ngModelChange)="citizensSSN = $event" matInput />
           </mat-form-field>
         </div>
         <div class="search-button">
@@ -22,6 +22,11 @@
         <h3 mat-subheader>Citizen Information</h3>
         <mat-list-item>
           <mat-icon mat-list-icon>account_circle</mat-icon>
+          <p mat-line>
+            <mat-label>
+              SSN: {{citizenInfo$.ssn}}
+            </mat-label>
+          </p>
           <p mat-line>
             <mat-label>
               Name: {{citizenInfo$.firstname}} {{citizenInfo$.lastname}}

@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class JailComponent implements OnInit {
   totalCost = 0;
   totalTime = 0;
-  citizensName: string;
+  citizensSSN: string;
   reasons = [];
   
   misdemeanors = [
@@ -374,17 +374,16 @@ export class JailComponent implements OnInit {
   }
 
   postJailData(){
-    let name = this.citizensName.split(" ")
+    let ssn = this.citizensSSN
 
     const jailData = {
       totalCost: this.totalCost,
       totalTime: this.totalTime,
-      firstName: name[0],
-      lastName: name[1],
+      ssn: parseInt(ssn),
       reasons: this.reasons
     }
     
-    this.citizensName = "";
+    this.citizensSSN = "";
     this.totalTime = 0;
     this.totalCost = 0;
 

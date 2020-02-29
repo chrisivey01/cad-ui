@@ -14,8 +14,6 @@ import { FinesService } from './services/fines.service';
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./components/main/main.component";
-import { ActiveBolosComponent } from "./components/active-bolos/active-bolos.component";
-import { InputBolosComponent } from "./components/input-bolos/input-bolos.component";
 import { WarrantComponent } from "./components/warrant/warrant.component";
 import { JailComponent } from "./components/jail/jail.component";
 import { CadSideNavComponent } from './components/cad-side-nav/cad-side-nav.component';
@@ -33,18 +31,19 @@ import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { PlateSearcherComponent } from './components/plate-searcher/plate-searcher.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ActiveBolosComponent,
-    InputBolosComponent,
+
     WarrantComponent,
     JailComponent,
     CadSideNavComponent,
-    FinesComponent
+    FinesComponent,
+    PlateSearcherComponent
   ],
   imports: [
     RouterModule,

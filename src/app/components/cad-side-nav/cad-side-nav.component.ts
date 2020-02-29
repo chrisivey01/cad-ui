@@ -19,12 +19,11 @@ export class CadSideNavComponent implements OnInit {
     {
       label:'Fines',
       path:"/fines"
-    }
-    // ,
-    // {
-    //   label:'Active BOLOs',
-    //   path:"/active-bolos"
-    // },
+    },
+    {
+      label:'Plate Searcher',
+      path:"/plate-searcher"
+    },
     // {
     //   label:'Input BOLOs',
     //   path:"/input-bolos"

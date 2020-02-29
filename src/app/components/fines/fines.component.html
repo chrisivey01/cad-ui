@@ -2,8 +2,8 @@
     <div class="row">
         <div>
             <mat-form-field appearance="outline">
-                <mat-label>Citizen's Name</mat-label>
-                <input [ngModel]="citizensName" (ngModelChange)="citizensName = $event" matInput />
+                <mat-label>Citizen's SSN</mat-label>
+                <input [ngModel]="citizensSSN" (ngModelChange)="citizensSSN = $event" matInput />
             </mat-form-field>
             <span class="shift-right">
                 <button mat-raised-button color="primary" (click)="postFinesData()">

@@ -1,5 +1,6 @@
 import { Jails } from './jails.models';
 export interface Citizen {
+  ssn: number;
   firstname:string;
   lastname:string;
   sex:string;

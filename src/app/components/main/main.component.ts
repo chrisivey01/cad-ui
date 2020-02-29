@@ -1,7 +1,7 @@
-import { Observable } from 'rxjs';
 import { MainService } from '../../services/main.service';
 import { Component, OnInit } from '@angular/core';
 import { Citizen } from '../../models/citizen.model';
+import { SSN } from '../../models/ssn.model';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -9,11 +9,9 @@ import { Citizen } from '../../models/citizen.model';
 })
 export class MainComponent implements OnInit {
 
-  citizensName: string;
-  firstName: string;
-  lastName: string;
-  citizensRecord: any;
+  citizensSSN: string;
   citizenInfo$: Citizen;
+  ssn:SSN;
   constructor(private mainService:MainService) { }
 
   ngOnInit() {
@@ -21,10 +19,13 @@ export class MainComponent implements OnInit {
   }
 
   getData(){
-    this.firstName = this.citizensName.split(" ")[0];
-    this.lastName = this.citizensName.split(" ")[1];
-
-    this.mainService.getCitizenData(this.firstName, this.lastName)
-      .subscribe(res => this.citizenInfo$ = res[0])
+    this.ssn = {
+      ssn:parseInt(this.citizensSSN)
     }
+    
+    this.mainService.getCitizenData(this.ssn)
+    .subscribe(res => this.citizenInfo$ = res[0]);
+
+    this.citizensSSN = '';
+  }
 }

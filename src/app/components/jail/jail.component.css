@@ -6,22 +6,13 @@
     overflow: hidden;
 }
 
-/* .search-tally-container{
-    display:flex;
-    width:100%;
-    height:inherit;
-    justify-content:space-around;
-    margin-top:10px;
-    height:150px;
-} */
-
 .jail-items{
     display:block;
     font-size:10px;
 }
 
 .mat-list-option {
-    height:24px !important;
+    height:20px !important;
 }
 
 .mat-list-text {

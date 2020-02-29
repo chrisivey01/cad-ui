@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="plate-row">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Vehicle Plate</mat-label>
+                <input [ngModel]="citizensPlate" (ngModelChange)="citizensPlate = $event" matInput />
+            </mat-form-field>
+            <span class="shift-right">
+                <button mat-raised-button color="primary" (click)="getData()">
+                    Search Plate
+                </button>
+            </span>
+        </div>
+        <mat-list *ngIf="plateResponse$">
+            <h3 mat-subheader>Citizen Information</h3>
+            <mat-list-item class="felonies">
+                <mat-icon mat-list-icon>account_circle</mat-icon>
+                <p mat-line>
+                    <mat-label>
+                        SSN: {{plateResponse$.ssn}}
+                    </mat-label>
+                </p>
+                <p mat-line>
+                    <mat-label>
+                        Name: {{plateResponse$.firstname}} {{plateResponse$.lastname}}
+                    </mat-label>
+                </p>
+                <p mat-line>
+                    <mat-label>
+                        Sex: {{plateResponse$.sex}}
+                    </mat-label>
+                </p>
+                <p mat-line>
+                    <mat-label>
+                        Height: {{plateResponse$.height}}
+                    </mat-label>
+                </p>
+                <p mat-line>
+                    <mat-label>
+                        DOB: {{plateResponse$.dateofbirth}}
+                    </mat-label>
+                </p>
+                <p mat-line>
+                    <mat-label>
+                        Job: {{plateResponse$.job}}
+                    </mat-label>
+                </p>
+                <p mat-line>
+                    <mat-label>
+                        Phone Number: {{plateResponse$.phone_number}}
+                    </mat-label>
+                </p>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div *ngIf="plateResponse$" >
+        <mat-list>
+            <mat-list-item class="plate-list" *ngFor="let plate of plateResponse$.carPlates; let i = index">
+                <span class="plate">{{plate}}</span>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>

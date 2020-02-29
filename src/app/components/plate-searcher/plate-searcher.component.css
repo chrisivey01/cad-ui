@@ -1,0 +1,23 @@
+.plate-container{
+    display:flex;
+    height: inherit;
+    flex-wrap: wrap;
+    margin: auto;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.plate-row {
+    height:100px;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.plate-list{
+    height:20px !important;
+}
+
+.plate {
+    font-size:10px !important;
+}
+
