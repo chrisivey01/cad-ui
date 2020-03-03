@@ -1,0 +1,64 @@
+.bolos-container { 
+    display:flex;
+    height:100%;
+    flex-direction:row;
+}
+
+.left-container{
+    display:block;
+    width:40%;
+}
+
+.right-container{
+    display:block;
+    width:60%
+}
+
+.bolo-inputs{
+    margin-top: 15vh;
+    text-align: center;
+}
+
+.bolo-text{
+    width:35vh;
+}
+
+.button-row .margin-left{
+    margin-left:10px;
+}
+/* 
+.mat-select-panel mat-option.mat-option {
+    margin: 1rem 0;
+    overflow: visible;
+    line-height: initial;
+
+}
+    
+.mat-option-text.mat-option-text {
+    white-space: normal;
+} */
+/* .mat-list-option{
+    height: auto !important;
+}
+
+.mat-ripple {
+    height: auto !important;
+}
+
+
+
+.mat-list-text {
+    width:40vh !important;
+} */
+
+.listed-bolos .mat-list-text {
+    word-wrap: break-word;
+    white-space: pre-wrap !important;
+    height: auto !important;
+    width: 80vh;
+    margin:10px;
+}
+
+.listed-bolos .mat-list-option{
+    height:auto !important;
+}

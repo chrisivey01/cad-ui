@@ -1,0 +1,36 @@
+<div class="bolos-container">
+    <div class="left-container">
+        <div class="bolo-inputs">
+            <mat-form-field class="bolo-text">
+                <mat-label>BOLO</mat-label>
+                <textarea [ngModel]="boloReason" 
+                    cdkTextareaAutosize 
+                    #boloMessage="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="15"
+                    [maxLength]="256"
+                    (ngModelChange)="boloReason = $event" 
+                    matInput>
+                </textarea>
+            </mat-form-field>
+            <div class="button-row">
+            <!-- <span class="shift-right"> -->
+                <button mat-raised-button color="primary" (click)="submitBolo()">
+                    Input BOLO
+                </button>
+                <button class="margin-left" mat-raised-button color="primary" (click)="removeBolo()">
+                    Remove BOLO
+                </button>
+            </div>
+        </div>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="right-container">
+        <h3 matSubheader>BOLOs</h3>
+        <mat-selection-list class="listed-bolos">
+            <mat-list-option (click)="addBoloToList(i)" *ngFor="let bolo of boloList; let i = index">
+                {{bolo.bolo}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+</div>

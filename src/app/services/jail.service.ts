@@ -3,10 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class JailService {
-    firstName;
-    lastName
-    reasons;
-
     constructor(private http: HttpClient) { }
    
     postJailData(jailData){

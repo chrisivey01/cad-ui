@@ -7,6 +7,7 @@ import { WarrantComponent } from './components/warrant/warrant.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BolosComponent } from './components/bolos/bolos.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'fines', component: FinesComponent},
   {path:'plate-searcher', component: PlateSearcherComponent},
   {path:'warrants', component: WarrantComponent},
+  {path:'bolos', component: BolosComponent}
 ];
 
 @NgModule({

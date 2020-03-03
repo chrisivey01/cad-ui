@@ -1,4 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { BolosService } from './../../services/bolos.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cad-side-nav',
@@ -6,6 +7,8 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./cad-side-nav.component.css']
 })
 export class CadSideNavComponent implements OnInit {
+  boloCount$;
+  // boloCount: number;
 
   links = [
     {
@@ -24,15 +27,19 @@ export class CadSideNavComponent implements OnInit {
       label:'Plate Searcher',
       path:"/plate-searcher"
     },
-    // {
-    //   label:'Input BOLOs',
-    //   path:"/input-bolos"
-    // }
+    {
+      label:'BOLOs',
+      path:"/bolos"
+    }
 
   ]
-  constructor() { }
+  constructor(private boloService: BolosService) { }
 
   ngOnInit(): void {
+    this.boloService.getCount().subscribe(count => this.boloCount$ = count);
   }
 
+  obtainCount(){
+    this.boloService.getCount().subscribe(count => this.boloCount$ = count);
+  }
 }

@@ -31,7 +31,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { MatBadgeModule } from '@angular/material/badge';
+
 import { PlateSearcherComponent } from './components/plate-searcher/plate-searcher.component';
+import { BolosComponent } from './components/bolos/bolos.component';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { PlateSearcherComponent } from './components/plate-searcher/plate-search
     JailComponent,
     CadSideNavComponent,
     FinesComponent,
-    PlateSearcherComponent
+    PlateSearcherComponent,
+    BolosComponent
   ],
   imports: [
     RouterModule,
@@ -62,7 +66,8 @@ import { PlateSearcherComponent } from './components/plate-searcher/plate-search
     MatListModule,
     MatRippleModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule
 
   ],
   providers: [
@@ -70,6 +75,7 @@ import { PlateSearcherComponent } from './components/plate-searcher/plate-search
     BolosService,
     JailService,
     FinesService,
+    BolosService,
     { provide: APP_BASE_HREF, useValue: "/" },
   ],
   bootstrap: [AppComponent]
