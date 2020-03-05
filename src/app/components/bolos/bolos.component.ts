@@ -1,3 +1,5 @@
+import { BoloDeletes } from './../../models/bolo-deletes.model';
+import { BoloList } from './../../models/bolo-list.model';
 import { BolosService } from './../../services/bolos.service';
 import { Bolo } from './../../models/bolo.model';
 import { Component, OnInit, Input } from '@angular/core';
@@ -8,21 +10,26 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./bolos.component.css']
 })
 export class BolosComponent implements OnInit {
-  @Input()
   boloReason;
   bolo:Bolo;
-  boloList = [];
+  boloList;
+  removedBolos = [];
   value = 'Clear me';
+  boloDeletes:BoloDeletes;
 
   constructor(private bolosService: BolosService) { }
 
   ngOnInit(): void {
+    this.bolosService.getBolo().subscribe(res => {
+      this.boloList = res
+    })
   }
 
   submitBolo(){
     this.bolo = {
       checked: false,
-      bolo:this.boloReason
+      reason: this.boloReason,
+      start: new Date()
     }
     this.boloReason = "";
     this.boloList.push(this.bolo);
@@ -34,8 +41,10 @@ export class BolosComponent implements OnInit {
   }
 
   removeBolo(){
-    this.boloList = this.boloList.filter(bolos => {
-      return bolos.checked === false
+    this.removedBolos = this.boloList.filter(bolos => bolos.checked)
+    this.bolosService.removeBolos(this.removedBolos)
+    .subscribe(data => {
+      this.boloList = data;
     })
   }
 }

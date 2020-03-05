@@ -14,7 +14,6 @@
                 </textarea>
             </mat-form-field>
             <div class="button-row">
-            <!-- <span class="shift-right"> -->
                 <button mat-raised-button color="primary" (click)="submitBolo()">
                     Input BOLO
                 </button>
@@ -28,8 +27,8 @@
     <div class="right-container">
         <h3 matSubheader>BOLOs</h3>
         <mat-selection-list class="listed-bolos">
-            <mat-list-option (click)="addBoloToList(i)" *ngFor="let bolo of boloList; let i = index">
-                {{bolo.bolo}}
+            <mat-list-option class="bolo-seperator" (click)="addBoloToList(i)" *ngFor="let bolo of boloList; let i = index">
+                {{bolo.reason}}
             </mat-list-option>
         </mat-selection-list>
     </div>

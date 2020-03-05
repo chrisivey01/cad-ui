@@ -1,4 +1,5 @@
 export interface Bolo {
-    bolo: string;
+    reason: string;
     checked: false;
+    start: Date;
 }

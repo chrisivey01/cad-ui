@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadSideNavComponent implements OnInit {
   boloCount$;
-  // boloCount: number;
 
   links = [
     {
@@ -31,8 +30,8 @@ export class CadSideNavComponent implements OnInit {
       label:'BOLOs',
       path:"/bolos"
     }
-
   ]
+
   constructor(private boloService: BolosService) { }
 
   ngOnInit(): void {

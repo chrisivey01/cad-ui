@@ -6,13 +6,13 @@
 <mat-sidenav-container class="mat-sidenav-container">
     <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
         <mat-selection-list class="side-nav-list">
-            <mat-list-item *ngFor="let item of links" mat-ripple class="item">
+            <mat-list-item (click)="obtainCount()" *ngFor="let item of links" mat-ripple class="item">
                 <a mat-list-item [routerLink]="item.path">
                     <div *ngIf="boloCount$ > 0 && item.label == 'BOLOs'; else noCount">
-                        <span (click)=obtainCount() [matBadge]="boloCount$" class="content">{{item.label}}</span>
+                        <span [matBadge]="boloCount$" class="content">{{item.label}}</span>
                     </div>
                     <ng-template #noCount>
-                        <span (click)=obtainCount() class="content">{{item.label}}</span>
+                        <span class="content">{{item.label}}</span>
                     </ng-template>
                 </a>
             </mat-list-item>

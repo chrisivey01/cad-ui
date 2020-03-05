@@ -20,12 +20,35 @@
 }
 
 .bolo-text{
-    width:35vh;
+    padding-bottom:20px;
 }
 
 .button-row .margin-left{
     margin-left:10px;
 }
+
+.listed-bolos {
+    height:400px;
+    overflow:auto;
+}
+
+::-webkit-scrollbar {
+    /* height: 4px; */
+    width: 4px;
+    /* background: red;  */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f51b5;
+    border-radius: 25px;
+    height: 60px;
+}
+
+.bolo-seperator {
+    padding-bottom: 15px !important;
+}
+
+
 /* 
 .mat-select-panel mat-option.mat-option {
     margin: 1rem 0;

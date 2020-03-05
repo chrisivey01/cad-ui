@@ -36,6 +36,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { PlateSearcherComponent } from './components/plate-searcher/plate-searcher.component';
 import { BolosComponent } from './components/bolos/bolos.component';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -67,8 +69,9 @@ import { BolosComponent } from './components/bolos/bolos.component';
     MatRippleModule,
     MatTabsModule,
     MatCardModule,
-    MatBadgeModule
-
+    MatBadgeModule,
+    StoreModule.forRoot([]),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [
     MainService,
