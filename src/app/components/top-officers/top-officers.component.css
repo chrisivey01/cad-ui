@@ -10,3 +10,9 @@ th.mat-sort-header-sorted {
 .example-table-container{
     color:black;
 }
+
+.example-header{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

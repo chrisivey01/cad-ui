@@ -36,8 +36,6 @@ export class TopOfficersComponent implements AfterViewInit{
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    console.log(filterValue.trim().toLowerCase());
-
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
