@@ -29,6 +29,10 @@ export class CadSideNavComponent implements OnInit {
     {
       label:'BOLOs',
       path:"/bolos"
+    },
+    {
+      label:'Top Officers',
+      path:"/top-officers"
     }
   ]
 

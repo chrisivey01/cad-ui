@@ -10,14 +10,15 @@ import { MainService } from "./services/main.service";
 import { JailService } from "./services/jail.service";
 import { BolosService } from "./services/bolos.service";
 import { FinesService } from './services/fines.service';
+import { TopOfficerService } from './services/top-officers.service';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { MainComponent } from "./components/main/main.component";
-import { WarrantComponent } from "./components/warrant/warrant.component";
 import { JailComponent } from "./components/jail/jail.component";
 import { CadSideNavComponent } from './components/cad-side-nav/cad-side-nav.component';
 import { FinesComponent } from './components/fines/fines.component';
+import { TopOfficersComponent } from './components/top-officers/top-officers.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -32,24 +33,24 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from "@angular/material/paginator"; 
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner"; 
+import { MatSortModule } from "@angular/material/sort";
 import { PlateSearcherComponent } from './components/plate-searcher/plate-searcher.component';
 import { BolosComponent } from './components/bolos/bolos.component';
 
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-
-    WarrantComponent,
     JailComponent,
     CadSideNavComponent,
     FinesComponent,
     PlateSearcherComponent,
-    BolosComponent
+    BolosComponent,
+    TopOfficersComponent
   ],
   imports: [
     RouterModule,
@@ -70,8 +71,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     MatTabsModule,
     MatCardModule,
     MatBadgeModule,
-    StoreModule.forRoot([]),
-    StoreDevtoolsModule.instrument()
+    MatTableModule,
+    MatPaginatorModule, 
+    MatProgressSpinnerModule,
+    MatSortModule,
   ],
   providers: [
     MainService,
@@ -79,6 +82,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     JailService,
     FinesService,
     BolosService,
+    TopOfficerService,
     { provide: APP_BASE_HREF, useValue: "/" },
   ],
   bootstrap: [AppComponent]

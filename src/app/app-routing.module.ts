@@ -3,7 +3,7 @@ import { MainComponent } from './components/main/main.component';
 import { JailComponent } from './components/jail/jail.component';
 import { FinesComponent } from './components/fines/fines.component';
 import { PlateSearcherComponent } from './components/plate-searcher/plate-searcher.component';
-import { WarrantComponent } from './components/warrant/warrant.component';
+import { TopOfficersComponent } from './components/top-officers/top-officers.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,8 +15,8 @@ const routes: Routes = [
   {path:'jail', component: JailComponent},
   {path:'fines', component: FinesComponent},
   {path:'plate-searcher', component: PlateSearcherComponent},
-  {path:'warrants', component: WarrantComponent},
-  {path:'bolos', component: BolosComponent}
+  {path:'bolos', component: BolosComponent},
+  {path:'top-officers', component: TopOfficersComponent},
 ];
 
 @NgModule({
