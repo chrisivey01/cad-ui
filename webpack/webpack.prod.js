@@ -9,6 +9,7 @@ module.exports = webpackMerge(commonConfig, {
     path: path.resolve(process.cwd(), 'html'),
     filename: '[name].js',
   },
+  // devtool: 'source-map',
 
   plugins: [
     new HtmlWebpackPlugin({

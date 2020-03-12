@@ -5,7 +5,6 @@ import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/common';
 import '@angular/material';
-import '@ngrx/store'
 import 'indigo-pink.css';
 
 // RxJS

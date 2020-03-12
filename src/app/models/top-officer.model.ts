@@ -1,4 +1,5 @@
 export interface TopOfficer {
     name:string,
-    jailer:number
+    jailer:number,
+    last_logged:Date
 }

@@ -11,7 +11,7 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
   styleUrls: ['./top-officers.component.css']
 })
 export class TopOfficersComponent implements AfterViewInit{
-  displayedColumns: string[] = ['name', 'jail']
+  displayedColumns: string[] = ['name', 'jail', 'logged']
   dataSource: MatTableDataSource<TopOfficer>;
 
   resultsLength = 0;
@@ -23,6 +23,11 @@ export class TopOfficersComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
     this.topOfficerService.getOfficers().subscribe((result) => {
+      
+      result[0].officers.forEach(element => {
+        const date = new Date(element.officer.logged)
+        element.officer.logged = date.toLocaleString()
+      });
       this.dataSource = new MatTableDataSource<TopOfficer>(result[0].officers)
       this.dataSource.filterPredicate = (data: TopOfficer, filter) => {
         const dataFilter = JSON.stringify(data).toLowerCase();

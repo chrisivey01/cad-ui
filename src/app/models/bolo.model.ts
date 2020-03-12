@@ -1,5 +1,5 @@
 export interface Bolo {
     reason: string;
-    checked: false;
+    checked: boolean;
     start: Date;
 }

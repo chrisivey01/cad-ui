@@ -26,8 +26,8 @@
     <mat-divider [vertical]="true"></mat-divider>
     <div class="right-container">
         <h3 matSubheader>BOLOs</h3>
-        <mat-selection-list class="listed-bolos">
-            <mat-list-option class="bolo-seperator" (click)="addBoloToList(i)" *ngFor="let bolo of boloList; let i = index">
+        <mat-selection-list #bolos class="listed-bolos" [(ngModel)]="selectedOptions" (ngModelChange)="addBoloToList($event)">
+            <mat-list-option class="bolo-seperator" *ngFor="let bolo of boloList" [value]="bolo">
                 {{bolo.reason}}
             </mat-list-option>
         </mat-selection-list>

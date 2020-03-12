@@ -153,6 +153,6 @@ export class FinesComponent implements OnInit {
     this.finesService.postFinesData(this.fines).subscribe();
     this.citizensSSN = ''
     this.totalCost = 0;
-
+    deselectAll()
   }
 }

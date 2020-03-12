@@ -36,12 +36,11 @@ export class BolosComponent implements OnInit {
     this.bolosService.postBolo(this.bolo).subscribe();
   }
 
-  addBoloToList(index){
-    this.boloList[index].checked = !this.boloList[index].checked
+  addBoloToList(event){
+    this.removedBolos = event
   }
 
   removeBolo(){
-    this.removedBolos = this.boloList.filter(bolos => bolos.checked)
     this.bolosService.removeBolos(this.removedBolos)
     .subscribe(data => {
       this.boloList = data;
